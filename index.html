@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Zenith Solutions | Software Consultancy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
+            --primary-color: #4A90E2;
+            --secondary-color: #357ABD;
             --accent-color: #60a5fa;
             --text-color: #e1e7ef;
             --light-color: #0f172a;
@@ -17,27 +20,17 @@
             --border-color: #334155;
         }
 
-        [data-theme="light"] {
-            --text-color: #333;
-            --light-color: #f8fafc;
-            --dark-color: #1e293b;
-            --gray-color: #64748b;
-            --card-bg: #fff;
-            --border-color: #e2e8f0;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
             color: var(--text-color);
             line-height: 1.6;
             background: var(--dark-color);
-            transition: all 0.3s;
         }
 
         .container {
@@ -57,12 +50,12 @@
 
         a {
             text-decoration: none;
-            color: var(--primary-color);
+            color: var(--accent-color);
             transition: all 0.3s;
         }
 
         a:hover {
-            color: var(--accent-color);
+            color: #93c5fd;
         }
 
         @keyframes fadeUp {
@@ -76,11 +69,6 @@
             }
         }
 
-        @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
         @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
@@ -88,30 +76,33 @@
 
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.6rem;
-            background: var(--primary-color);
-            color: #fff;
-            border-radius: 4px;
+            padding: 0.9rem 2rem;
+            background: #60a5fa;
+            color: #020617;
+            border-radius: 6px;
             font-weight: 600;
+            font-size: 1rem;
             transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-            color: #fff;
+            box-shadow: 0 10px 25px rgba(96, 165, 250, 0.4);
+            background: #93c5fd;
+            color: #020617;
         }
 
         header {
-            background: var(--card-bg);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: #0f172a;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
+            border-bottom: 1px solid #1e293b;
         }
 
         .header-content {
@@ -125,39 +116,26 @@
             height: 50px;
             display: flex;
             align-items: center;
-            gap: 10px;
         }
 
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-        }
-
-        .logo-hex {
-            fill: none;
-            stroke: var(--gray-color);
-            stroke-width: 2;
-        }
-
-        .logo-tree {
-            fill: var(--primary-color);
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-color);
+        .logo img {
+            height: 100%;
+            width: auto;
         }
 
         nav ul {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         nav a {
             font-weight: 500;
             position: relative;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
         }
 
         nav a:after {
@@ -172,47 +150,20 @@
             transform: translateX(-50%);
         }
 
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
         nav a:hover:after {
             width: 100%;
         }
 
-        .theme-btn {
-            background: none;
-            border: 2px solid var(--border-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            color: var(--text-color);
-        }
-
-        .theme-btn:hover {
-            border-color: var(--accent-color);
-            transform: rotate(180deg);
-        }
-
         .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #2563eb, #1e40af);
             color: #fff;
             text-align: center;
             padding: 12rem 0 5rem;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 200%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shine 8s infinite;
         }
 
         .hero h1 {
@@ -288,7 +239,7 @@
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.2);
         }
 
         .service-icon {
@@ -315,6 +266,7 @@
 
         .mobile-menu {
             display: none;
+            color: #cbd5e1;
         }
 
         @media (max-width: 768px) {
@@ -335,20 +287,15 @@
                 display: block;
                 cursor: pointer;
             }
-            .theme-btn { display: none; }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body data-theme="dark">
+<body>
     <header>
         <div class="container header-content">
             <div class="logo">
-                <svg class="logo-icon" viewBox="0 0 40 40">
-                    <path class="logo-hex" d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z"/>
-                    <path class="logo-tree" d="M20 8 L17 10 L17 14 L14 16 L14 20 L11 22 L11 26 L17 29 L20 27 L23 29 L29 26 L29 22 L26 20 L26 16 L23 14 L23 10 Z"/>
-                </svg>
-                <span class="logo-text">TECH ZENITH</span>
+                <img src="logo_light_bg.webp" alt="Tech Zenith Solutions">
             </div>
             <nav>
                 <ul id="nav">
@@ -357,9 +304,6 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="theme-btn" onclick="toggleTheme()">
-                    <i class="fas fa-sun" id="themeIcon"></i>
-                </button>
             </nav>
             <div class="mobile-menu" onclick="document.getElementById('nav').classList.toggle('active')">
                 <i class="fas fa-bars"></i>
@@ -483,7 +427,7 @@
                             <label>Message</label>
                             <textarea class="form-textarea" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <button type="submit" class="btn form-btn">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -493,12 +437,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">
-                    <svg class="logo-icon" viewBox="0 0 40 40">
-                        <path class="logo-hex" d="M20 2 L35 11 L35 29 L20 38 L5 29 L5 11 Z"/>
-                        <path class="logo-tree" d="M20 8 L17 10 L17 14 L14 16 L14 20 L11 22 L11 26 L17 29 L20 27 L23 29 L29 26 L29 22 L26 20 L26 16 L23 14 L23 10 Z"/>
-                    </svg>
-                    <span class="logo-text">TECH ZENITH</span>
+                <div class="footer-logo">
+                    <img src="logo_light_bg.webp" alt="Tech Zenith Solutions" style="height: 40px; width: auto;">
                 </div>
                 <ul class="footer-links">
                     <li><a href="#home">Home</a></li>
@@ -543,7 +483,7 @@
         }
         .contact-item:hover {
             transform: translateX(10px);
-            box-shadow: 0 4px 15px rgba(37,99,235,0.2);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.2);
         }
         .contact-icon {
             color: var(--primary-color);
@@ -555,29 +495,36 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #cbd5e1;
         }
         .form-input,
         .form-textarea {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 6px;
             background: var(--card-bg);
             color: var(--text-color);
             transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
         }
         .form-input:focus,
         .form-textarea:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
         }
         .form-textarea {
             resize: vertical;
             min-height: 120px;
         }
+        .form-btn {
+            width: 100%;
+            margin-top: 0.5rem;
+        }
         footer {
-            background: var(--dark-color);
+            background: #030712;
             color: var(--text-color);
             padding: 3rem 0;
             border-top: 1px solid var(--border-color);
@@ -589,8 +536,17 @@
         }
         .footer-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             list-style: none;
+        }
+        .footer-links a {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .footer-links a:hover {
+            color: var(--accent-color);
         }
         .copyright {
             text-align: center;
@@ -607,24 +563,14 @@
                 flex-direction: column;
                 gap: 1.5rem;
             }
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
     </style>
 
     <script>
-        // Theme toggle
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.body.setAttribute('data-theme', savedTheme);
-        document.getElementById('themeIcon').className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        
-        function toggleTheme() {
-            const body = document.body;
-            const current = body.getAttribute('data-theme');
-            const next = current === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            document.getElementById('themeIcon').className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        }
-        
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -666,9 +612,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if(window.scrollY > 100) {
-                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.3)';
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.5)';
             } else {
-                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
             }
         });
         
@@ -678,7 +624,7 @@
             const btn = this.querySelector('.btn');
             const original = btn.textContent;
             btn.textContent = 'Sending...';
-            btn.style.background = 'var(--accent-color)';
+            btn.style.background = '#4A90E2';
             
             setTimeout(() => {
                 btn.textContent = 'Message Sent!';
