@@ -94,6 +94,7 @@
             color: #020617;
         }
 
+        /* Redesigned Header */
         header {
             background: #0f172a;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -107,25 +108,36 @@
 
         .header-content {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 1.5rem 2rem 1rem;
+        }
+
+        .logo-container {
+            margin-bottom: 1.5rem;
         }
 
         .logo {
-            height: 50px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .logo img {
-            height: 100%;
+            height: 80px;
             width: auto;
+            max-width: 300px;
+            object-fit: contain;
+        }
+
+        nav {
+            width: 100%;
         }
 
         nav ul {
             display: flex;
-            gap: 2.5rem;
+            justify-content: center;
+            gap: 3rem;
             list-style: none;
             align-items: center;
         }
@@ -134,8 +146,9 @@
             font-weight: 500;
             position: relative;
             color: #cbd5e1;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
         nav a:after {
@@ -162,8 +175,9 @@
             background: linear-gradient(135deg, #2563eb, #1e40af);
             color: #fff;
             text-align: center;
-            padding: 12rem 0 5rem;
+            padding: 14rem 0 5rem;
             position: relative;
+            margin-top: 130px;
         }
 
         .hero h1 {
@@ -267,10 +281,30 @@
         .mobile-menu {
             display: none;
             color: #cbd5e1;
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .header-content {
+                position: relative;
+                padding: 1rem;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+            
+            .hero {
+                margin-top: 150px;
+            }
+            
+            .hero h1 { 
+                font-size: 2rem; 
+            }
+            
             nav ul {
                 display: none;
                 position: absolute;
@@ -281,8 +315,13 @@
                 flex-direction: column;
                 padding: 1rem;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+                gap: 1rem;
             }
-            nav ul.active { display: flex; }
+            
+            nav ul.active { 
+                display: flex; 
+            }
+            
             .mobile-menu {
                 display: block;
                 cursor: pointer;
@@ -294,8 +333,10 @@
 <body>
     <header>
         <div class="container header-content">
-            <div class="logo">
-                <img src="logo_light_bg.webp" alt="Tech Zenith Solutions">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="logo_light_bg.webp" alt="Tech Zenith Solutions">
+                </div>
             </div>
             <nav>
                 <ul id="nav">
